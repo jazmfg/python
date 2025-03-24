@@ -119,3 +119,43 @@ if letra in texto:
     print(f'Indice de la primera aparición de la letra "{letra}" en "{texto}": {aparicion}')
 else: 
     print(f'La letra "{letra}" no se encuentra en el texto: "{texto}"')
+    
+
+# Calculadora: Crea un programa que solicite dos números al usuario y permita realizar operaciones de suma, resta, multiplicación y división     
+
+a = float(input("Ingresa un número: "))
+b = float(input("Ingresa otro número: "))
+
+if a == int(a):
+    resultado_a = f"{int(a)}"
+else:
+    resultado_a = f"{a:.2f}"
+
+if b == int(b):
+    resultado_b = f"{int(b)}"
+else:
+    resultado_b = f"{b:.2f}"
+
+operacion = input("\n¿Qué operación deseas realizar ingresa:\n\n(+) para sumar\n(-) para restar\n(*) para multiplicar\n(/) para dividir:\n\n")
+
+if operacion == "+":
+    resultado = a + b
+elif operacion == "-":
+    resultado = a - b
+elif operacion == "*":
+    resultado = a * b
+elif operacion == "/":
+    if b != 0:
+        resultado = a / b
+    else: 
+        print("¡Error! No se puede dividir por 0")
+else:
+    print("¡Error! Ingresa uno de los siguiente operadores: +, -, *, /")
+    exit()
+    
+if resultado == int(resultado):
+    resultado = int(resultado)
+else:
+    resultado = f"{resultado:.2f}"
+    
+print(f"El resultado de {resultado_a} {operacion} {resultado_b} es {resultado}")
